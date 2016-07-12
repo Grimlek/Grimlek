@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charles Sexton Portfolio</title>
+    <!-- html5 version of http-equiv="Content-Type"... -->
+    <meta name="description" content="A portfolio for Charles Sexton.">
+    <meta name="keywords" content="Charles,Sexton,Portfolio,Resume,Projects">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container-fluid" id="navbar">
+    <div class="row">
+        <div class="col-xs-5 col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-7">
+            <h3>Portfolio</h3>
+        </div>
+        <div class="container-space col-xs-7 col-sm-5 col-md-4">
+            <a id="about" class="btn btn-warning" href="#home" type="button">About</a>
+            <a id="portfolio" class="btn btn-warning" href="#classwork-label" type="button">Portfolio</a>
+            <a id="contact" class="btn btn-warning" href="#contact-form" type="button">Contact</a>
+            <a id="github-link" href="https://github.com/Grimlek" target="_blank">
+                <img id="github"
+                     src="http://res.cloudinary.com/grimly/image/upload/v1468097422/GitHub-Mark-32px_u1peu5.png"/></a>
+        </div>
+    </div>
+</div>
+<div id="home" class="container">
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-4">
+            <img/>
+        </div>
+        <div class="col-xs-4">
+            <p id="intro">Hi! My name is Charles Sexton. I am currently an automation engineer and have the desire to
+                become an
+                entry level developer. If you have a position available for an individual who is passionate and eagar to
+                learn please <a>contact me!</a></p>
+        </div>
+    </div>
+</div>
+<h1 id="classwork-label" class="container-label">Class Projects</h1>
+<div class="container">
+    <input type="image" src="http://res.cloudinary.com/grimly/image/upload/v1467307519/left-arrow_hjlg2a.png"
+           id="left-arrow-classwork" class="arrow"/>
+    <div id="classwork-tabs" class="row">
+        <a class="btn active" type="button">Game of Pig</a>
+        <a class="btn tab" type="button">Tetris Brain</a>
+        <a class="btn tab" type="button">Shape Maker</a>
+        <a class="btn tab" type="button">Bounded Queue Component</a>
+        <a class="btn tab" type="button">Adventure Game</a>
+    </div>
+    <div id="classwork-container">
+        <div id="pig-slide-0" class="row slide main-slide">
+            <div class="col-xs-offset-1 col-xs-6">
+                <img src="http://res.cloudinary.com/grimly/image/upload/c_scale,h_506,q_100,r_0,w_600/v1467253684/Screen_Shot_2016-06-29_at_10.22.59_PM_xbcb3b.png"/>
+            </div>
+            <div class="col-xs-5 col-lg-5">
+                <h4 class="bold">The Game of Pig</h4>
+                <p class="thicker-font">This project is one of the best examples of my expertise with object oriented
+                    programming in Java.
+                    The
+                    project was a school assignment in CS5044 at Virginia Tech and a very interesting one. The Game of
+                    Pig
+                    is a command line interface program in
+                    which the user plays against the computer. Both the user and the computer take turns rolling a pair
+                    of
+                    dice. The first player to a hundred points wins the game. For more game specific details please see
+                    the
+                    <a target="_blank" href="https://github.com/Grimlek/Course-Work/blob/master/Pig%20Game/README.md">project
+                        outline</a>.
+                </p>
+            </div>
+        </div>
+        <div id="tetris-slide-0" class="row slide main-slide hidden">
+            <div class="col-xs-offset-1 col-xs-6">
+                <iframe id="tetris-demo" src="http://www.youtube.com/embed/Rd4q2Tl4h9Y" width="640"
+                        height="480"></iframe>
+            </div>
+            <div class="col-xs-offset-1 col-lg-offset-1 col-xs-3 col-lg-3">
+                <h4 class="bold">Tetris Brain</h4>
+                <p class="thicker-font">This project was one of my favorites at Virginia Tech. With this project we were
+                    required to
+                    create artificial intelligence to play the game of tetris. The graphical user interface was
+                    provided as a third party library and we had to use object oriented programming to implement the
+                    artifical intelligence. Please see the <a target="_blank"
+                                                              href="https://github.com/Grimlek/Course-Work/tree/master/Tetris%20Brain">project
+                        outline</a> for more details.
+                </p>
+            </div>
+        </div>
+        <div id="adventure-slide-0" class="row slide main-slide hidden">
+            <div class="col-xs-6">
+                <img id="adventure-game-img"
+                     src="http://res.cloudinary.com/grimly/image/upload/c_scale,w_700/v1467861957/Screen_Shot_2016-07-06_at_11.11.50_PM_kmcnav.png"/>
+            </div>
+            <div class="col-xs-offset-1 col-xs-5">
+                <h4 class="bold">Adventure Game</h4>
+                <p class="thicker-font">The project was based on the idea of creating a text based game similar to the
+                    first games ever made
+                    for computers, Zork and Infocom being the two most popular during that era. We were able to use alot
+                    of creativity for the project but still had a specific set of requirements we had to meet. I decided
+                    to do a text based dungeon crawler where you had to find the treasure room and collect the treasure.
+                    While trying to find the treasure room you had to fight your way through a numerous amount of
+                    enemies with your hero. For more project specific details please see
+                    the <a target="_blank" href="https://github.com/Grimlek/Course-Work/tree/master/Adventure%20Game">project
+                        outline</a>.</p>
+            </div>
+        </div>
+        <div id="component-slide-0" class="row slide main-slide hidden">
+            <div class="col-xs-6">
+                <img src="http://res.cloudinary.com/grimly/image/upload/c_scale,w_777/v1467856881/bounded-queue-component-diagram_ndtm1q.png"/>
+            </div>
+            <div class="col-xs-offset-2 col-xs-4">
+                <h4 class="bold">Bounded Queue Component</h4>
+                <p class="thicker-font">Bounded queue component was a class project which focused on component design.
+                    We were given a class
+                    diagram and then asked to create the component based on the given diagram. This project taught me
+                    alot about component design, hashcode and preconditional checking. Please see the <a target="_blank"
+                                                                                                         href="https://github.com/Grimlek/Course-Work/tree/master/BddQueueComponent">project
+                        outline</a>
+                    for more details.
+                </p>
+            </div>
+        </div>
+        <div id="shape-slide-0" class="row slide main-slide hidden">
+            <div class="col-xs-5">
+                <img id="shape-maker-gui"
+                     src="http://res.cloudinary.com/grimly/image/upload/v1467853682/shape-maker_imnthb.png"/>
+            </div>
+            <div class="col-xs-6">
+                <h4 class="bold">Shape Maker</h4>
+                <p class="thicker-font">The shape maker project is a graphical user interface created in java which
+                    allows the user to drag
+                    and release the selected shape onto the application window. The shape retains it size when released
+                    and contains the desired options specified by the user. Per the specified requirements, the shape
+                    objects had to have the hierarchy provided below. For more project specific details please see
+                    the <a target="_blank" href="https://github.com/Grimlek/Course-Work/tree/master/Shape%20Maker">project
+                        outline</a>.
+                </p>
+                <img id="shape-hierarchy"
+                     src="http://res.cloudinary.com/grimly/image/upload/v1467853685/shapes-class-diagram_qq4equ.png"/>
+            </div>
+        </div>
+    </div>
+    <input type="image" src="http://res.cloudinary.com/grimly/image/upload/v1467307527/right-arrow_azzq49.png"
+           id="right-arrow-classwork" class="arrow"/>
+</div>
+<h1 id="personal-label" class="container-label">Personal Projects</h1>
+<div class="container">
+    <input type="image" src="http://res.cloudinary.com/grimly/image/upload/v1467307519/left-arrow_hjlg2a.png"
+           id="left-arrow-personal" class="arrow"/>
+    <div id="personal-tabs" class="row">
+        <a class="btn active" type="button">TSCO Application</a>
+    </div>
+    <div id="personal-container">
+        <div id="tsco-slide-0" class="row slide main-slide">
+            <div class="row">
+                <div class="col-xs-7 col-centered">
+                    <h4 class="text-center bold">TSCO Application</h4>
+                    <p class="thicker-font">For more project specific details please see the
+                        <a target="_blank" href="https://github.com/Grimlek/TSCO-Application">project
+                            outline</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-8 col-centered">
+                <img src="http://res.cloudinary.com/grimly/image/upload/c_scale,w_800/v1467993355/Screen_Shot_2016-07-08_at_11.52.13_AM_qkxepi.png"/>
+            </div>
+        </div>
+        <div id="tsco-slide-1" class="row slide sub-slide-1 hidden">
+            <div class="row">
+                <div class="col-xs-7 col-centered">
+                    <h4 class="text-center bold">TSCO Application</h4>
+                    <p class="thicker-font">For more game specific details please see the
+                        <a target="_blank" href="https://github.com/Grimlek/TSCO-Application">project
+                            outline</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-10 col-centered text-center">
+                <img src="http://res.cloudinary.com/grimly/image/upload/c_scale,w_900/v1467992993/Screen_Shot_2016-07-07_at_10.26.50_PM_d7luic.png"/>
+            </div>
+        </div>
+        <div id="tsco-slide-2" class="row slide sub-slide-2 hidden">
+            <div class="row">
+                <div class="col-xs-7 col-centered">
+                    <h4 class="text-center bold">TSCO Application</h4>
+                    <p class="thicker-font">For more game specific details please see the
+                        <input type="text" placeholder="Email Address"/> <a target="_blank"
+                                                                            href="https://github.com/Grimlek/TSCO-Application">project
+                            outline</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-10 col-centered text-center">
+                <img src="http://res.cloudinary.com/grimly/image/upload/c_scale,w_900/v1467992989/Screen_Shot_2016-07-07_at_10.25.34_PM_vq8tcg.png"/>
+            </div>
+        </div>
+    </div>
+    <input type="image" src="http://res.cloudinary.com/grimly/image/upload/v1467307527/right-arrow_azzq49.png"
+           id="right-arrow-personal" class="arrow"/>
+</div>
+<div class="container">
+    <div id="contact-form">
+        <h3 id="email-header">Send me an Email!</h3>
+        <textarea id="email-address" class="email-field" rows="1" cols="30" placeholder="Email Address"></textarea>
+        <textarea id="subject" class="email-field" spellcheck="true" rows="1" cols="45"
+                  placeholder="Subject"></textarea>
+        <textarea id="message" class="email-field" spellcheck="true" rows="10" cols="45"
+                  placeholder="Message:"></textarea>
+        <input id="send-email" type="button" value="Send Email"/>
+    </div>
+</div>
+<p id="copyright">© 2016 Charles Sexton</p>
+<!--Javascript Files-->
+<script src="index.js"></script>
+</body>
+</html>
