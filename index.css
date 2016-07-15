@@ -19,7 +19,7 @@ a {
 
 a.tab {
     background-color: #333333;
-    color: #FFFFFF;
+    color: #F2F2F2;
 }
 
 div#classwork-tabs {
@@ -63,11 +63,11 @@ h3 {
     font-weight: bold;
     line-height: 1em;
     left: 10%;
-    text-shadow: 1px 1px 0  #BD6A00, 3px 3px 0 #9E4B00, 5px 5px 0 #711E00, 7px 7px 0 #520000, 8px 8px 0 #430000, 9px 9px 8px rgba(0, 0, 0, 0.3), 9px 9px 1px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, .2);
+    text-shadow: 1px 1px 0  #BD6A00, 2px 2px 0  #BD6A00, 3px 3px 0 #9E4B00, 4px 4px 0 #9E4B00, 5px 5px 0 #711E00, 6px 6px 0 #711E00, 7px 7px 0 #520000, 8px 8px 0 #430000, 9px 9px 8px rgba(0, 0, 0, 0.3), 9px 9px 1px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, .2);
 }
 
 div#navbar {
-    background-color: #306FFF;
+    background-color: #F2F2F2;
     position: fixed;
     z-index: 9999;
     width: 100%;
@@ -100,12 +100,8 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #306FFF;
+    background-color: #F2F2F2;
     min-width: 1240px;
-}
-
-div.sub-slide-1 {
-    background-color: #FF7F50;
 }
 
 div.slide {
@@ -116,7 +112,7 @@ div.slide {
     height: 700px;
 }
 
-div.main-slide {
+div.main-slide, div.sub-slide-1, div.sub-slide-2, div.sub-slide-3 {
     background-color: #FFCC00;
 }
 
@@ -235,24 +231,18 @@ div.container, div.container-fluid {
     min-width: 1170px;
 }
 
-div.sub-slide-2 {
-    background-color: #00E600;
-}
-
-div.sub-slide-3 {
-    background-color: #D24DFF;
-}
-
 div.container {
     padding-top: 3%;
 }
 
 h3#email-header {
-    border-top: 3px solid #F0AD4E;;
+    border-top: 3px solid #F0AD4E;
     border-bottom: 3px solid #F0AD4E;
     line-height: 2em;
     text-align: center;
     font-family: cursive;
+    font-weight: 500;
+    text-shadow: 1px 1px 0  #BD6A00, 2px 2px 0 #9E4B00, 3px 3px 0 #711E00;
 }
 
 div.gist-data {
@@ -317,4 +307,8 @@ p#copyright {
     font-size: 14px;
     padding-left: 5%;
     padding-bottom: .5%;
+}
+
+div.alert-loading {
+    display: inline-block;
 }

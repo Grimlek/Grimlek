@@ -24,8 +24,63 @@ $(function () {
     arrowsClickEvent($('input#left-arrow-personal'), $('input#right-arrow-personal'), personalSlide, tscoAppSlides);
     tabHoverEvent($("a.active"));
     tabClickEvent($("a.tab, a.active"));
+
+    $('a#contact').on('click', function() {
+        var cnt = 0;
+        $emailHeader = $('h3#email-header');
+        var timer = setInterval(function () {
+            cnt++;
+            if (cnt == 8) {
+                $emailHeader.css('border-top', '3px solid #F0AD4E');
+                $emailHeader.css('border-bottom', '3px solid #F0AD4E');
+                clearInterval(timer);
+            } else {
+                if (cnt % 2 == 1) {
+                    $emailHeader.css('border-top', '3px solid #F0AD4E');
+                    $emailHeader.css('border-bottom', '3px solid #F0AD4E');
+                }
+                else {
+                    $emailHeader.css('border-top', '3px solid #000000');
+                    $emailHeader.css('border-bottom', '3px solid #000000');
+                }
+            }
+        }, 250);
+    });
+
+    $('input#send-email').on('click', function() {
+        $('h3#email-header, textarea#email-address, textarea#subject, textarea#message').value = '';
+    });
+
+    var $contactForm = $('form#email-form');
+    $contactForm.submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '//formspree.io/charlie_sexton@yahoo.com',
+            method: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                $contactForm.append('<div class="alert alert-loading">Sending message…</div>');
+            },
+            success: function(data) {
+                $contactForm.find('.alert-loading').hide();
+                $contactForm.append('<div class="alert alert-success">Message sent!</div>');
+                setTimeout(function () {
+                    $contactForm.find('.alert-success').hide();
+                }, 5000);
+            },
+            error: function(err) {
+                $contactForm.find('.alert-loading').hide();
+                $contactForm.append('<div class="alert alert-error">Ops, there was an error.</div>');
+            }
+        });
+    });
+
 });
 
+var flashEmailHeader = setInterval(function() {
+    $('h3#email-header').toggleClass('black-border');
+}, 1000);
 
 /*
 * Changes the active tab to the tab that was clicked, also changes the slide content.
@@ -184,7 +239,6 @@ function rightArrowNext(currentSlide, slideArray) {
         $(slideArray[slideArray.length - 1]).addClass('hidden');
         var $nextSlide = $(slideArray[0]);
         $nextSlide.removeClass('hidden');
-        $('a.active').css('background-color', $nextSlide.css('backgroundColor'));
         currentSlide.num = 0;
     }
     else {
@@ -194,7 +248,6 @@ function rightArrowNext(currentSlide, slideArray) {
                 $(slideArray[i]).addClass('hidden');
                 var $nextSlide = $(slideArray[i + 1]);
                 $nextSlide.removeClass('hidden');
-                $('a.active').css('background-color', $nextSlide.css('backgroundColor'));
                 currentSlide.num++;
                 break;
             }
@@ -259,20 +312,3 @@ getGistSlide("https://gist.github.com/Grimlek/156c9082872bccff8013a5adcbf6e1c4.j
 }).then( function () {
     getGistSlide("https://gist.github.com/Grimlek/ae65778b6a1289677f4ad87cb444762d.json?callback=?", 'adventure-slide-3', 'sub-slide-3', adventureGameSlides);
 });
-
-
-// $gameOfPigSlide = '<div id="game-of-pig" class="row slide main-slide">' +
-//     '<div class="col-xs-offset-1 col-xs-6">' +
-//     '<img src="http://res.cloudinary.com/grimly/image/upload/c_scale,h_506,q_100,r_0,w_600/v1467253684/Screen_Shot_2016-06-29_at_10.22.59_PM_xbcb3b.png"/>' +
-//     '</div>' +
-//     '<div class="col-xs-5 col-lg-5">' +
-//     '<h4>The Game of Pig</h4>' +
-//     '<p>This project is one of the best examples of my expertise with object oriented programming in Java. The' +
-//     'project was a school assignment in CS5044 at Virginia Tech and a very interesting one. The Game of Pig' +
-//     'is a command line interface program in' +
-//     'which the user plays against the computer. Both the user and the computer take turns rolling a pair of' +
-//     'dice. The first player to a hundred points wins the game. For more game specific details please see the' +
-//     '<a target="_blank" href="https://github.com/Grimlek/Course-Work/blob/master/Pig%20Game/README.md">project outline</a>.' +
-//     '</p>' +
-//     '</div>' +
-//     '</div>';

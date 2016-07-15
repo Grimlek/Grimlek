@@ -194,8 +194,8 @@
                 <div class="col-xs-7 col-centered">
                     <h4 class="text-center bold">TSCO Application</h4>
                     <p class="thicker-font">For more game specific details please see the
-                        <input type="text" placeholder="Email Address"/> <a target="_blank"
-                                                                            href="https://github.com/Grimlek/TSCO-Application">project
+                        <a target="_blank"
+                           href="https://github.com/Grimlek/TSCO-Application">project
                             outline</a>.
                     </p>
                 </div>
@@ -210,13 +210,18 @@
 </div>
 <div class="container">
     <div id="contact-form">
-        <h3 id="email-header">Send me an Email!</h3>
-        <textarea id="email-address" class="email-field" rows="1" cols="30" placeholder="Email Address"></textarea>
-        <textarea id="subject" class="email-field" spellcheck="true" rows="1" cols="45"
-                  placeholder="Subject"></textarea>
-        <textarea id="message" class="email-field" spellcheck="true" rows="10" cols="45"
-                  placeholder="Message:"></textarea>
-        <input id="send-email" type="button" value="Send Email"/>
+        <form id="email-form" action="https://formspree.io/charlie_sexton@yahoo.com"
+              method="POST">
+            <h3 id="email-header">Send me an Email!</h3>
+            <textarea id="email-address" class="email-field" name="_replyto" rows="1" cols="30"
+                      placeholder="Email Address"></textarea>
+            <textarea id="subject" class="email-field" name="_subject" spellcheck="true" rows="1" cols="45"
+                      placeholder="Subject"></textarea>
+            <textarea id="message" class="email-field" name="message" spellcheck="true" rows="10" cols="45"
+                      placeholder="Message:"></textarea>
+            <input type="text" name="_gotcha" style="display:none" /> <!-- Provide protection against web scrapers -->
+            <input id="send-email" type="submit" value="Send Email"/>
+        </form>
     </div>
 </div>
 <p id="copyright">© 2016 Charles Sexton</p>
