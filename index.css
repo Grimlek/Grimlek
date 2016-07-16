@@ -236,10 +236,11 @@ div.container {
 }
 
 h3#email-header {
+    text-align: center;
+    display: block;
     border-top: 3px solid #F0AD4E;
     border-bottom: 3px solid #F0AD4E;
     line-height: 2em;
-    text-align: center;
     font-family: cursive;
     font-weight: 500;
     text-shadow: 1px 1px 0  #BD6A00, 2px 2px 0 #9E4B00, 3px 3px 0 #711E00;
@@ -311,4 +312,20 @@ p#copyright {
 
 div.alert-loading {
     display: inline-block;
+}
+
+span {
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+span.input-alert, span.alert--error {
+    padding-left: 5%;
+    color: #E60000;
+}
+
+span.alert--success {
+    padding-left: 5%;
+    color: #00E600;
 }

@@ -47,40 +47,62 @@ $(function () {
         }, 250);
     });
 
-    $('input#send-email').on('click', function() {
-        $('h3#email-header, textarea#email-address, textarea#subject, textarea#message').value = '';
-    });
-
-    var $contactForm = $('form#email-form');
+    $contactForm = $('form#email-form');
     $contactForm.submit(function(e) {
         e.preventDefault();
-        $.ajax({
-            url: '//formspree.io/charlie_sexton@yahoo.com',
-            method: 'POST',
-            data: $(this).serialize(),
-            dataType: 'json',
-            beforeSend: function() {
-                $contactForm.append('<div class="alert alert-loading">Sending message…</div>');
-            },
-            success: function(data) {
-                $contactForm.find('.alert-loading').hide();
-                $contactForm.append('<div class="alert alert-success">Message sent!</div>');
-                setTimeout(function () {
-                    $contactForm.find('.alert-success').hide();
-                }, 5000);
-            },
-            error: function(err) {
-                $contactForm.find('.alert-loading').hide();
-                $contactForm.append('<div class="alert alert-error">Ops, there was an error.</div>');
-            }
-        });
+        if(validateEmailInput()) {
+            $.ajax({
+                url: '//formspree.io/charlie_sexton@yahoo.com',
+                method: 'POST',
+                data: $(this).serialize(),
+                dataType: 'json',
+                beforeSend: function () {
+                    $contactForm.append('<span class="alert alert--loading">Sending message…</span>');
+                },
+                success: function (data) {
+                    $contactForm.find('.alert--loading').remove();
+                    $contactForm.append('<span class="alert alert--success">Message sent!</span>');
+                    $('h3#email-header, textarea#email-address, textarea#subject, textarea#message').val('');
+                    setTimeout(function () {
+                        $contactForm.find('.alert--success').remove();
+                    }, 5000);
+                },
+                error: function (err) {
+                    $contactForm.find('.alert--loading').remove();
+                    $contactForm.append('<span class="alert alert--error">There was an error!</span>');
+                    setTimeout(function () {
+                        $contactForm.find('.alert--error').remove();
+                    }, 5000);
+                }
+            });
+        }
     });
 
 });
 
-var flashEmailHeader = setInterval(function() {
-    $('h3#email-header').toggleClass('black-border');
-}, 1000);
+
+/*
+* Validation for email input
+*/
+function validateEmailInput() {
+    $contactForm = $('form#email-form');
+    var emailRegex = /^[a-zA-Z0-9._\-%#+]+@[a-zA-Z0-9.]+.com/;
+    $('.input-alert').remove();
+
+    if (!emailRegex.test($('textarea#email-address').val())) {
+        $contactForm.append('<span class="input-alert">Please enter a valid email!</span>');
+        return false;
+    }
+    else if ($('textarea#subject').val() == '') {
+        $contactForm.append('<span class="input-alert">Please enter a subject!</span>');
+        return false;
+    }
+    else if ($('textarea#message').val() == '') {
+        $contactForm.append('<span class="input-alert">Please enter a message!</span>');
+        return false;
+    }
+    return true;
+}
 
 /*
 * Changes the active tab to the tab that was clicked, also changes the slide content.
