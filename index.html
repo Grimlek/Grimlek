@@ -18,14 +18,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="container-fluid" id="navbar">
+<div id="navbar" class="container-fluid">
     <div class="row">
         <div class="col-xs-5 col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-7">
             <h3>Portfolio</h3>
         </div>
         <div class="container-space col-xs-7 col-sm-5 col-md-4">
             <a id="about" class="btn btn-warning" href="#home" type="button">About</a>
-            <a id="portfolio" class="btn btn-warning" href="#classwork-label" type="button">Portfolio</a>
+            <a id="portfolio" class="btn btn-warning" type="button">Portfolio</a>
             <a id="contact" class="btn btn-warning" href="#contact-form" type="button">Contact</a>
             <a id="github-link" href="https://github.com/Grimlek" target="_blank">
                 <img id="github"
@@ -35,8 +35,9 @@
 </div>
 <div id="home" class="container">
     <div class="row">
-        <div class="col-xs-offset-2 col-xs-4">
-            <img/>
+        <div class="col-xs-offset-2 col-xs-4 text-right">
+            <img id="personal-img"
+                 src="http://res.cloudinary.com/grimly/image/upload/v1468679207/AAEAAQAAAAAAAAbXAAAAJGFhODU3ZjBkLWE4YmYtNDg1NS05YWFhLTdlNDg5Y2IxYWQ1Yg_aydmdx.png"/>
         </div>
         <div class="col-xs-4">
             <p id="intro">Hi! My name is Charles Sexton. I am currently an automation engineer and have the desire to
@@ -163,26 +164,34 @@
     <div id="personal-container">
         <div id="tsco-slide-0" class="row slide main-slide">
             <div class="row">
-                <div class="col-xs-7 col-centered">
+                <div class="col-xs-8 col-centered">
                     <h4 class="text-center bold">TSCO Application</h4>
-                    <p class="thicker-font">For more project specific details please see the
+                    <p class="thicker-font">TSCO Application was a GUI application specifically implemented for reducing
+                        the number
+                        of excel files used for inventory control and providing a single location for access of all the
+                        data. The application provided additional features that multiple excel spreadhsheets couldn't
+                        such as search features, data validation and notifications. The
+                        intention of the project was to help TSCO achieve easier employee training and an application to
+                        provide easier access to data. The TSCO Application was never used in production due to the lack
+                        of interest in upper management of Tube Specialties but personally it was a great programming
+                        experience. For more project specific details please see the
                         <a target="_blank" href="https://github.com/Grimlek/TSCO-Application">project
                             outline</a>.
                     </p>
                 </div>
             </div>
-            <div class="col-xs-8 col-centered">
+            <div class="col-xs-9 col-centered text-center">
                 <img src="https://res.cloudinary.com/grimly/image/upload/c_scale,w_800/v1467993355/Screen_Shot_2016-07-08_at_11.52.13_AM_qkxepi.png"/>
             </div>
         </div>
         <div id="tsco-slide-1" class="row slide sub-slide-1 hidden">
             <div class="row">
-                <div class="col-xs-7 col-centered">
-                    <h4 class="text-center bold">TSCO Application</h4>
-                    <p class="thicker-font">For more game specific details please see the
-                        <a target="_blank" href="https://github.com/Grimlek/TSCO-Application">project
-                            outline</a>.
-                    </p>
+                <div class="col-xs-8 col-centered">
+                    <h4 class="text-center bold">Adding Products</h4>
+                    <p class="thicker-font">Data can be added using a built in table provided through a pop up dialog.
+                        This dialog provides mostly the same features as an excel spreadsheet except for not having the need to
+                        search for a specific excel spreadsheet within a file system as the information is provided in a Supplier pop up
+                        dialog with easy selection of a supplier.</p>
                 </div>
             </div>
             <div class="col-xs-10 col-centered text-center">
@@ -191,12 +200,12 @@
         </div>
         <div id="tsco-slide-2" class="row slide sub-slide-2 hidden">
             <div class="row">
-                <div class="col-xs-7 col-centered">
-                    <h4 class="text-center bold">TSCO Application</h4>
-                    <p class="thicker-font">For more game specific details please see the
-                        <a target="_blank"
-                           href="https://github.com/Grimlek/TSCO-Application">project
-                            outline</a>.
+                <div class="col-xs-8 col-centered">
+                    <h4 class="text-center bold">Data Validation</h4>
+                    <p class="thicker-font">This image illustrates one of the benefits that the application provided
+                        over multiple excel spreadsheets, data validation. Although data validation can be done using
+                        Visual Basic for Applications and applying it to every spreadsheet this solution provides a more
+                        maintainable solution through the use of regular expressions. project outline.
                     </p>
                 </div>
             </div>
@@ -219,7 +228,7 @@
                       placeholder="Subject"></textarea>
             <textarea id="message" class="email-field" name="message" spellcheck="true" rows="10" cols="45"
                       placeholder="Message:"></textarea>
-            <input type="text" name="_gotcha" style="display:none" /> <!-- Provide protection against web scrapers -->
+            <input type="text" name="_gotcha" style="display:none"/> <!-- Provide protection against web scrapers -->
             <input id="send-email" type="submit" value="Send Email"/>
         </form>
     </div>

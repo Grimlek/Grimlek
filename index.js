@@ -26,25 +26,16 @@ $(function () {
     tabClickEvent($("a.tab, a.active"));
 
     $('a#contact').on('click', function() {
-        var cnt = 0;
-        $emailHeader = $('h3#email-header');
-        var timer = setInterval(function () {
-            cnt++;
-            if (cnt == 8) {
-                $emailHeader.css('border-top', '3px solid #F0AD4E');
-                $emailHeader.css('border-bottom', '3px solid #F0AD4E');
-                clearInterval(timer);
-            } else {
-                if (cnt % 2 == 1) {
-                    $emailHeader.css('border-top', '3px solid #F0AD4E');
-                    $emailHeader.css('border-bottom', '3px solid #F0AD4E');
-                }
-                else {
-                    $emailHeader.css('border-top', '3px solid #000000');
-                    $emailHeader.css('border-bottom', '3px solid #000000');
-                }
-            }
-        }, 250);
+        borderBottomTopFlash('h3#email-header', '3px solid #F0AD4E', '3px solid #000000')
+    });
+
+    $('p#intro a').on('click', function() {
+        goToByScroll('h3#email-header');
+        borderBottomTopFlash('h3#email-header', '3px solid #F0AD4E', '3px solid #000000')
+    });
+
+    $('a#portfolio').on('click', function() {
+        goToByScroll('h1#classwork-label');
     });
 
     $contactForm = $('form#email-form');
@@ -72,7 +63,7 @@ $(function () {
                     $contactForm.append('<span class="alert alert--error">There was an error!</span>');
                     setTimeout(function () {
                         $contactForm.find('.alert--error').remove();
-                    }, 5000);
+                    }, 3500);
                 }
             });
         }
@@ -80,6 +71,41 @@ $(function () {
 
 });
 
+
+/*
+* Scrolls to an element
+*/
+function goToByScroll(selector){
+    $('html,body').animate({
+            scrollTop: $(selector).offset().top - $('div#navbar').height()},
+        'slow');
+}
+
+
+/*
+* A function that provides a border-top and border-bottom flash based on the specified styles
+*/
+function borderBottomTopFlash(selector, originalStyle, flashStyle) {
+    var cnt = 0;
+    $element = $(selector);
+    var timer = setInterval(function () {
+        cnt++;
+        if (cnt == 8) {
+            $element.css('border-top', originalStyle);
+            $element.css('border-bottom', originalStyle);
+            clearInterval(timer);
+        } else {
+            if (cnt % 2 == 1) {
+                $element.css('border-top', originalStyle);
+                $element.css('border-bottom', originalStyle);
+            }
+            else {
+                $element.css('border-top', flashStyle);
+                $element.css('border-bottom', flashStyle);
+            }
+        }
+    }, 250);
+}
 
 /*
 * Validation for email input

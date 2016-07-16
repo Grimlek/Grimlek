@@ -45,6 +45,10 @@ a.btn-warning:active {
     box-shadow: inset 0 10px 15px 0 #d45d6d;
 }
 
+img#personal-img {
+    border-radius: 40px;
+}
+
 h1.container-label {
     font-family: cursive;
     font-weight: bold;
@@ -173,7 +177,7 @@ div#component-slide-0 {
     font-weight: 400;
 }
 
-div#tsco-slide-0 {
+div#tsco-slide-0, div#tsco-slide-1, div#tsco-slide-2 {
     padding-top: 5%;
 }
 
@@ -328,4 +332,18 @@ span.input-alert, span.alert--error {
 span.alert--success {
     padding-left: 5%;
     color: #00E600;
+}
+
+.orange-border {
+    border-top: 3px solid #F0AD4E;
+    border-bottom: 3px solid #F0AD4E;
+}
+
+.black-border {
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+}
+
+div#tsco-slide-0 p, div#tsco-slide-1 p, div#tsco-slide-2 p {
+    text-indent: 50px;
 }
