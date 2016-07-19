@@ -303,7 +303,7 @@ a#github-link {
 
 div#contact-form {
     min-width: 300px;
-    padding: 2% 0 3% 0;
+    padding: 4% 0 3% 0;
     margin: 0 auto;
 }
 
@@ -346,8 +346,4 @@ span.alert--success {
 
 div#tsco-slide-0 p, div#tsco-slide-1 p, div#tsco-slide-2 p {
     text-indent: 50px;
-}
-
-div#tsco-slide-0 p {
-    font-size: 1.2em;
 }
