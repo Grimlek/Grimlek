@@ -347,3 +347,7 @@ span.alert--success {
 div#tsco-slide-0 p, div#tsco-slide-1 p, div#tsco-slide-2 p {
     text-indent: 50px;
 }
+
+div#tsco-slide-0 p {
+    font-size: 1.2em;
+}
