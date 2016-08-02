@@ -318,12 +318,6 @@ div.alert-loading {
     display: inline-block;
 }
 
-span {
-    font-family: cursive;
-    font-size: 18px;
-    font-weight: 700;
-}
-
 span.input-alert, span.alert--error {
     padding-left: 5%;
     color: #E60000;
